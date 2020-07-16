@@ -58,4 +58,8 @@ if __name__ == "__main__":
         obs  = pm.MvNormal("obs", mu=mean[category], chol=L, observed=x)
         
         trace = pm.sample(draws=NUM_DRAWS, chains=3, tune=2000)
+
+        np.save("p.npy", trace.get_samples("p", combine=False))
+        np.save("mean", trace.get_samples("mean", combine=False))
+        np.save("cov", trace.get_samples("cov", combine=False))
         
