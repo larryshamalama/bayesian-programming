@@ -58,4 +58,4 @@ if __name__ == "__main__":
         obs  = pm.MvNormal("obs", mu=mean[category], chol=L, observed=x)
         
         trace = pm.sample(draws=NUM_DRAWS, chains=3, tune=2000)
-        pm.save_trace(trace, f"trace_mixture_{NUM_DRAWS}")
+        
