@@ -76,7 +76,7 @@ if __name__ == "__main__":
     x_test  = x_test/255
 
     x_train = np.array([pad(image) for image in x_train.reshape(x_train.shape[0], -1)])
-
+    
     adj = []
     position_matrix = np.linspace(0, 28*28 - 1, num=28*28).astype(np.int64).reshape(28, 28)
     count = 0
